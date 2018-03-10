@@ -1,15 +1,25 @@
 body {
   text-align: center;
   padding: 5%;
+  background-color: DarkOliveGreen;
 }
 
-/* .test {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+a {
+  padding-top: 30px;
+  color: black;
+  display: block;
+}
 
-.recipe-item {
+a:hover {
+  color: indianred;
+  text-decoration: none;
+}
+
+.intro-txt {
+  text-align: center;
+}
+
+.joke-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,14 +27,14 @@ body {
   padding: 5px;
 }
 
-.recipe-text {
+.joke-text {
   display: inline-block;
   text-align: left;
   padding-right: 10px;
   width: 400px;
 }
 
-.recipe-img {
+.joke-img {
   display: inline-block;
   right: 0;
   width: 100px;

@@ -9,27 +9,31 @@ class SearchJokes extends Component {
 
     this.state = {
       jokes: ''
-    }
+    };
   }
 
   search() {
     const url = `http://api.icndb.com/jokes/random/10`;
-    
+
     fetch(url, {
       method: 'GET'
-    }).then(response => response.json())
+    })
+      .then(response => response.json())
       .then(json => {
-        this.props.setJokes(json.value)
+        this.props.setJokes(json.value);
       });
   }
 
   render() {
     return (
-      <Form inline>
-        <Button onClick={() => this.search()}>Submit</Button>
-      </Form>
-    )
+      <div>
+        <p className="intro-txt">Hit Submit to RoundHouse kick some jokes in!</p>
+        <Button className="btn-danger" onClick={() => this.search()}>
+          Submit
+        </Button>
+      </div>
+    );
   }
 }
 
-export default connect(null, { setJokes})(SearchJokes);
+export default connect(null, { setJokes })(SearchJokes);

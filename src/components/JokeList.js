@@ -9,25 +9,18 @@ class JokeList extends Component {
 
     return (
       <div>
-        {
-          this.props.favoriteJokes.length > 0 ?
-            <h4 className="link"><Link to='/favorites'>Favorites</Link></h4>
-          :
-            <div></div>
-        }
-        {
-          this.props.jokes.map((joke, index) => {
-            return (
-              <JokeItem 
-                key={index} 
-                joke={joke}
-                favoriteButton={true}
-              />
-            )
-          })
-        }
+        {this.props.favoriteJokes.length > 0 ? (
+          <h4 className="link">
+            <Link to="/favorites">Show Your Favorites</Link>
+          </h4>
+        ) : (
+          <div />
+        )}
+        {this.props.jokes.map((joke, index) => {
+          return <JokeItem key={index} joke={joke} favoriteButton={true} />;
+        })}
       </div>
-    )
+    );
   }
 }
 
