@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import JokeItem from './JokeItem';
 
 class favoriteJokeList extends Component {
   render() {
@@ -11,14 +12,8 @@ class favoriteJokeList extends Component {
           <Link to="/">Home</Link>
         </h4>
         <h2>Favorite Jokes:</h2>
-        {this.props.favoriteJokes.map((id, index) => {
-          return (
-            <div className="joke-item">
-              <div className="joke-text" key={index}>
-                <h4>{id.joke}</h4>
-              </div>
-            </div>
-          );
+        {this.props.favoriteJokes.map((joke, index) => {
+          return <JokeItem key={index} joke={joke} favoriteButton={false} />;
         })}
       </div>
     );
