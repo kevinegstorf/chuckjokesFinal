@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { setJokes } from '../actions';
 
-class SearchJokes extends Component {
+class FetchJokes extends Component {
   constructor() {
     super();
 
@@ -36,4 +36,4 @@ class SearchJokes extends Component {
   }
 }
 
-export default connect(null, { setJokes })(SearchJokes);
+export default connect(null, { setJokes })(FetchJokes);

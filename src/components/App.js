@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import SearchJokes from './SearchJokes';
+import FetchJokes from './FetchJokes';
 import JokeList from './JokeList';
 import '../styles/index.css';
 
-
 class App extends Component {
-  render () {
+  render() {
     return (
       <div>
         <h2>Chuck Jokes</h2>
-        <SearchJokes/>
+        <FetchJokes />
         <JokeList />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
