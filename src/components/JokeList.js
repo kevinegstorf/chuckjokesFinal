@@ -17,7 +17,7 @@ class JokeList extends Component {
           <div />
         )}
         {this.props.jokes.map((joke, index) => {
-          return <JokeItem key={index} joke={joke} favoriteButton={true} />;
+          return <JokeItem id={index} key={index} joke={joke} favoriteButton={true} />;
         })}
       </div>
     );

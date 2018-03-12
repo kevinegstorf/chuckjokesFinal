@@ -4,7 +4,7 @@ import { bake_cookie, read_cookie } from 'sfcookies';
 
 function jokes(state = [], action) {
   console.log('reducer', action);
-  switch(action.type) {
+  switch (action.type) {
     case SET_JOKES:
       return action.items;
     default:
@@ -13,11 +13,12 @@ function jokes(state = [], action) {
 }
 
 function favoriteJokes(state = [], action) {
-  let favorites = [];
-    state = read_cookie('favorites');
-  switch(action.type) {
+  let favorites = state;
+  console.log('reducer', state, action);
+  state = read_cookie('favorites');
+  switch (action.type) {
     case FAVORITE_JOKES:
-      favorites = [...state, action.joke]
+      favorites = [...state, action.joke];
       bake_cookie('favorites', favorites);
       return state;
     default:
@@ -25,6 +26,6 @@ function favoriteJokes(state = [], action) {
   }
 }
 
-const rootReducer = combineReducers({ jokes, favoriteJokes})
+const rootReducer = combineReducers({ jokes, favoriteJokes });
 
 export default rootReducer;

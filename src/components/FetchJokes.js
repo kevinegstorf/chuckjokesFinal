@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { setJokes } from '../actions';
 
@@ -12,7 +12,7 @@ class FetchJokes extends Component {
     };
   }
 
-  search() {
+  fetch() {
     const url = `http://api.icndb.com/jokes/random/10`;
 
     fetch(url, {
@@ -28,7 +28,7 @@ class FetchJokes extends Component {
     return (
       <div>
         <p className="intro-txt">Hit Submit to RoundHouse kick some jokes in!</p>
-        <Button className="btn-danger" onClick={() => this.search()}>
+        <Button className="btn-danger" onClick={() => this.fetch()}>
           Submit
         </Button>
       </div>
